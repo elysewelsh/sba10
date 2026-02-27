@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
+import AppProviders from './AppProviders'
 
 // import { products } from "../data"
 
@@ -20,6 +21,7 @@ function ProductsPage() {
     }, [])
 
     return (
+    <AppProviders>
         <div>
             ProductsPage
             <ul>
@@ -30,6 +32,8 @@ function ProductsPage() {
                 )}
             </ul>
         </div>
+    </AppProviders>
+
     )
 }
 
