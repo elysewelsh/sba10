@@ -23,6 +23,17 @@ function RecipeDetailPage() {
         
 
     }, [idMeal])
+
+    const ingredients = [];
+    for(let i=1; i < 21; i++ ) {
+        const ingredient = recipe[`strIngredient${i}`];
+        if (ingredient && ingredient !== "") {
+            ingredients.push(
+                <li key={i}>{ingredient}</li>
+            );
+        }
+    }
+    console.log(ingredients);
     
     // const product = products.find(prod => prod.id == id)
 
@@ -30,11 +41,14 @@ function RecipeDetailPage() {
         // <AppProviders>
         !recipe.strMeal ? <></> :
             <div>
-                <h2>RecipeDetailPage</h2>
+                <h2>{recipe.strMeal}</h2>
                 <div>
                     <div>Details for Product: {recipe.idMeal}</div>
                     <div>Name: {recipe.strMeal}</div>
                 </div>
+                <ul>
+                    {ingredients}
+                </ul>
             </div>
 
     )
