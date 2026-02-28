@@ -4,39 +4,39 @@ import AppProviders from "../AppProviders"
 
 // import { products } from "../data"
 
-function ProductDetailPage() {
+function RecipeDetailPage() {
 
-    const [product, setProduct] = useState({})
+    const [recipe, setRecipe] = useState([])
 
-    const { id } = useParams()
+    const { idMeal } = useParams()
 
     useEffect(() => {
 
-        const getProduct = async () => {
-            const response = await fetch('https://dummyjson.com/products/' + id)
+        const getRecipe = async () => {
+            const response = await fetch('https://www.themealdb.com/api/json/v1/1/lookup.php?i=' + idMeal)
             const data = await response.json()
-            setProduct(data)
+            setRecipe(data.meals[0])
         }
 
-        getProduct()
+        getRecipe()
 
-    }, [id])
+    }, [idMeal])
     
     // const product = products.find(prod => prod.id == id)
 
     return (
-        <AppProviders>
+        // <AppProviders>
             <div>
                 <h2>RecipeDetailPage</h2>
                 <div>
-                    <div>Details for Product: {id}</div>
-                    <div>Name: {product.title}</div>
+                    <div>Details for Product: {recipe.idMeal}</div>
+                    <div>Name: {recipe.strMeal}</div>
                 </div>
             </div>
-        </AppProviders>
+
     )
 }
 
-export default ProductDetailPage
+export default RecipeDetailPage
 
 //Lookup full recipe details by ID: https://www.themealdb.com/api/json/v1/1/lookup.php?i=52772

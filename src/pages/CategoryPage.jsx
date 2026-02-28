@@ -21,14 +21,14 @@ function CategoryPage() {
 
     }, [strCategory])
 
-    // to={"/meal/" + meal.idMeal}
+    // 
     return (
     // <AppProviders>
         <div>
             Category Page
             <ul>
                 {mealList.map(meal => 
-                    <Link key={meal.idMeal} >
+                    <Link key={meal.idMeal} to={"/meal/" + meal.idMeal}>
                         <li key={meal.idMeal}>{meal.strMeal}</li>
                     </Link>
                 )}

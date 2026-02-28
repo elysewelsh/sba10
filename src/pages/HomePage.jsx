@@ -31,9 +31,9 @@ function HomePage() {
                     </Link>
                 )}
             </ul>
-
-            {/* <Routes>
-                <Route path="/:idCategory" element={<CategoryPage />} />
+{/* 
+            <Routes>
+                <Route path="/:strCategory" element={<CategoryPage />} />
             </Routes> */}
         </div>
 

@@ -3,6 +3,7 @@ import './App.css'
 
 import HomePage from './pages/HomePage'
 import CategoryPage from './pages/CategoryPage'
+import RecipeDetailPage from './pages/RecipeDetailPage'
 // import ProductsPage from './pages/ProductsPage'
 // import ProductDetailPage from './pages/ProductDetailPage'
 
@@ -21,7 +22,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="category/:strCategory" element={<CategoryPage />} />
-        {/* <Route path="/products/:id" element={<ProductDetailPage />} />  */}
+        <Route path="category/:strCategory/meals/:idMeal" element={<RecipeDetailPage />} /> 
         <Route path="*" element={<>Not found</>} />
       </Routes>
       
