@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
+import AppProviders from "../AppProviders"
 
 // import { products } from "../data"
 
@@ -24,14 +25,15 @@ function ProductDetailPage() {
     // const product = products.find(prod => prod.id == id)
 
     return (
-        <div>
-            <h2>ProductDetailPage</h2>
+        <AppProviders>
             <div>
-                <div>Details for Product: {id}</div>
-                <div>Name: {product.title}</div>
+                <h2>RecipeDetailPage</h2>
+                <div>
+                    <div>Details for Product: {id}</div>
+                    <div>Name: {product.title}</div>
+                </div>
             </div>
-            
-        </div>
+        </AppProviders>
     )
 }
 

@@ -1,42 +1,45 @@
 import { useEffect, useState } from "react"
-import { Link } from "react-router-dom"
-import AppProviders from './AppProviders'
+import { Link, useParams } from "react-router-dom"
+// import AppProviders from '../AppProviders'
 
 // import { products } from "../data"
 
-function ProductsPage() {
+function CategoryPage() {
 
-    const [products, setProducts] = useState([])
+    const [mealList, setMealList] = useState([])
+    
+    const {strCategory} = useParams()
 
     useEffect(() => {
-
-        const getPosts = async () => {
-            const response = await fetch('https://dummyjson.com/products')
+        const getMeals = async () => {
+            const response = await fetch('https://www.themealdb.com/api/json/v1/1/filter.php?c='+strCategory)
             const data = await response.json()
-            setProducts(data.products)
+            setMealList(data.meals)
         }
 
-        getPosts()
+        getMeals()
 
-    }, [])
+    }, [strCategory])
 
+    // to={"/meal/" + meal.idMeal}
     return (
-    <AppProviders>
+    // <AppProviders>
         <div>
-            ProductsPage
+            Category Page
             <ul>
-                {products.map(product => 
-                    <Link key={product.id} to={"/products/" + product.id}>
-                        <li>{product.title}</li>
+                {mealList.map(meal => 
+                    <Link key={meal.idMeal} >
+                        <li key={meal.idMeal}>{meal.strMeal}</li>
                     </Link>
                 )}
             </ul>
         </div>
-    </AppProviders>
+    // </AppProviders>
+
 
     )
 }
 
-export default ProductsPage
+export default CategoryPage
 
 //Filter by category: https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood
