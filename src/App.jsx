@@ -15,14 +15,14 @@ function App() {
       <nav>
         <ul>
           <li className="font-white"><Link to="/">Home</Link></li>
-          <li><Link to="/category">Category</Link></li>
+          {/* <li><Link to="/category">Category</Link></li> */}
         </ul>
       </nav>
       
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="category/:strCategory" element={<CategoryPage />} />
-        <Route path="category/:strCategory/meals/:idMeal" element={<RecipeDetailPage />} /> 
+        <Route path="category/:strCategory/meal/:idMeal" element={<RecipeDetailPage />} /> 
         <Route path="*" element={<>Not found</>} />
       </Routes>
       

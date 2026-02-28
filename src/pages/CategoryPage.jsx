@@ -28,11 +28,17 @@ function CategoryPage() {
             Category Page
             <ul>
                 {mealList.map(meal => 
-                    <Link key={meal.idMeal} to={"/meal/" + meal.idMeal}>
-                        <li key={meal.idMeal}>{meal.strMeal}</li>
+                    <Link key={meal.idMeal} to={"/category/"+ strCategory +"/meal/" + meal.idMeal}>
+                        <li>{meal.strMeal}</li>
                     </Link>
                 )}
             </ul>
+
+
+             {/* <Routes>
+                <Route path="meal/:idMeal" element={<RecipeDetailPage />} />
+            </Routes>  */}
+
         </div>
     // </AppProviders>
 

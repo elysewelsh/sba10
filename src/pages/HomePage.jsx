@@ -19,11 +19,9 @@ function HomePage() {
 
     }, [])
 
-    console.log(categories);
 
     return (
         <div>
-            Home Page
             <ul>
                 {categories.map(category => 
                     <Link key={category.idCategory} to={"/category/" + category.strCategory}>
@@ -31,10 +29,6 @@ function HomePage() {
                     </Link>
                 )}
             </ul>
-{/* 
-            <Routes>
-                <Route path="/:strCategory" element={<CategoryPage />} />
-            </Routes> */}
         </div>
 
 

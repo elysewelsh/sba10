@@ -61,7 +61,7 @@ npm run dev
 
 ## 📖 References
 
-* **Project References:** https://github.com/JadeTwo/2025-RTT-74/tree/main/mod-10, Other references and code citations within components
+* **Project References:** https://github.com/JadeTwo/2025-RTT-74/tree/main/mod-10, https://reactrouter.com/6.30.3/start/tutorial, Other references and code citations within components
 * **To Format README:** These templates gave me formatting advice and inspiration:
      - [Scrimba README template](https://github.com/elysewelsh/lab2.1/blob/main/README.md)
      - [Frontend Mentor README template](https://github.com/elysewelsh/sba3/blob/main/README-template.md)
