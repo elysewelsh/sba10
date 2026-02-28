@@ -78,6 +78,7 @@ Anyone in the list below has full access to this code and can fork or clone it b
     > json stringify vs direct data when switching to custom fetch hook
     > wasted time to write/understand/edit fetch for meals using state within category page vs. just using fetch hook
     > learned to use loading as control instead of tenery based on if data exists
+    > use useFetchData's return data explicitly - can't rename/use variables to handle it
     > installing tailwind fully
 1. Give a brief explanation of a design decision you made (e.g. why you structured a hook a certain way, how you decided to manage a piece of state).
     >
