@@ -1,39 +1,31 @@
 import { useEffect, useState } from "react"
 import { Link, useParams } from "react-router-dom"
+import  useFetchData  from '../hooks/useFetch'
 // import AppProviders from '../AppProviders'
 
 // import { products } from "../data"
 
 function CategoryPage() {
-
-    const [mealList, setMealList] = useState([])
-    
+ 
     const {strCategory} = useParams()
 
-    useEffect(() => {
-        const getMeals = async () => {
-            const response = await fetch('https://www.themealdb.com/api/json/v1/1/filter.php?c='+strCategory)
-            const data = await response.json()
-            setMealList(data.meals)
-        }
+    let url = 'https://www.themealdb.com/api/json/v1/1/filter.php?c='+strCategory
 
-        getMeals()
+    const { data, loading, error } = useFetchData(url);
 
-    }, [strCategory])
-
-    // 
     return (
     // <AppProviders>
         <div>
             Category Page
+            {loading ? <>loading...</>:
             <ul>
-                {mealList.map(meal => 
+            {data.meals.map(meal => 
                     <Link key={meal.idMeal} to={"/category/"+ strCategory +"/meal/" + meal.idMeal}>
                         <li>{meal.strMeal}</li>
                     </Link>
                 )}
             </ul>
-
+            }
 
              {/* <Routes>
                 <Route path="meal/:idMeal" element={<RecipeDetailPage />} />

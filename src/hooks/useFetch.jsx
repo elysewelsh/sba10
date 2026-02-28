@@ -20,8 +20,9 @@ function useFetchData(url, options) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         const result = await response.json();
-        const stringData = JSON.stringify(result)
-        setData(stringData);
+        // const stringData = JSON.stringify(result)
+        // setData(stringData);
+        setData(result);
       } catch (err) {
         if (err.name !== 'AbortError') { // Don't set error if aborted
           setError(err);
@@ -44,9 +45,9 @@ function useFetchData(url, options) {
  
 export default useFetchData;
 
-AppProvider: 
-return (
-<ThemeContext.Provider value={{ theme, toggleTheme }}>
+// AppProvider: 
+// return (
+// <ThemeContext.Provider value={{ theme, toggleTheme }}>
 
-</ThemeContext.Provider>
-)
+// </ThemeContext.Provider>
+// )
