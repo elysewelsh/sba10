@@ -4,14 +4,17 @@ import './App.css'
 import HomePage from './pages/HomePage'
 import CategoryPage from './pages/CategoryPage'
 import RecipeDetailPage from './pages/RecipeDetailPage'
-// import ProductsPage from './pages/ProductsPage'
-// import ProductDetailPage from './pages/ProductDetailPage'
+import { NavBar } from './components/Navbar'
+import SearchResultsPage from './pages/SearchResultsPage'
+import AppProviders from './AppProviders'
 
 function App() {
   
 
   return (
+    <AppProviders>
     <>
+    <NavBar/>
       <nav>
         <ul>
           <li className="font-white"><Link to="/">Home</Link></li>
@@ -23,10 +26,13 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="category/:strCategory" element={<CategoryPage />} />
         <Route path="category/:strCategory/meal/:idMeal" element={<RecipeDetailPage />} /> 
+        <Route path="meal/:idMeal" element={<RecipeDetailPage/>}/>
+        <Route path="search/:searchInput" element={<SearchResultsPage />} />
         <Route path="*" element={<>Not found</>} />
       </Routes>
       
     </>
+    </AppProviders>
   )
 }
 

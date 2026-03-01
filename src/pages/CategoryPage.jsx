@@ -1,9 +1,6 @@
-import { useEffect, useState } from "react"
 import { Link, useParams } from "react-router-dom"
 import  useFetchData  from '../hooks/useFetch'
-// import AppProviders from '../AppProviders'
 
-// import { products } from "../data"
 
 function CategoryPage() {
  
@@ -14,7 +11,6 @@ function CategoryPage() {
     const { data, loading, error } = useFetchData(url);
 
     return (
-    // <AppProviders>
         <div>
             Category Page
             {loading ? <>loading...</>:
@@ -27,12 +23,7 @@ function CategoryPage() {
             </ul>
             }
 
-             {/* <Routes>
-                <Route path="meal/:idMeal" element={<RecipeDetailPage />} />
-            </Routes>  */}
-
         </div>
-    // </AppProviders>
 
 
     )

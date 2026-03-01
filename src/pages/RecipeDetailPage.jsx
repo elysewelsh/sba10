@@ -1,8 +1,6 @@
-import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import RecipeCard from "../components/RecipeCard"
 import useFetchData from "../hooks/useFetch"
-import AppProviders from "../AppProviders"
 
 
 function RecipeDetailPage() {
@@ -15,14 +13,12 @@ function RecipeDetailPage() {
 
 
     return (
-        <AppProviders>
         <div>
         {loading ? <>loading...</>:
         !data.meals[0].strMeal ? <></> :
         <RecipeCard recipe={data.meals[0]} />
         }
         </div>
-        </AppProviders>
     )
 }
 
