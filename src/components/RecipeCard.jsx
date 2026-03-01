@@ -1,3 +1,6 @@
+import { useContext } from 'react'
+import  AppProviders, { FavoritesContext }  from '../AppProviders';
+
 function RecipeCard ({recipe}) {
 
     const ingredients = [];
@@ -20,7 +23,11 @@ function RecipeCard ({recipe}) {
     }
     const instructions = recipe.strInstructions
 
+    const {fave, toggleFave} = useContext(FavoritesContext);
+    const isFave = fave?.includes(recipe.idMeal)
+
     return (
+        <AppProviders>
             <div className="text-center">
                 <h2 className="font-bold">{recipe.strMeal}</h2>
                 <h3 className="font-bold mt-10">Ingredients</h3>
@@ -39,9 +46,16 @@ function RecipeCard ({recipe}) {
                     </div>
 
                 </div>
-                <h3 className="font-bold">Instructions</h3>
-                <div className="whitespace-pre-wrap">{instructions}</div>
+                <div>
+                    <h3 className="font-bold">Instructions</h3>
+                    <div className="whitespace-pre-wrap">{instructions}</div>
+                </div>
+                <button onClick ={() => toggleFave(recipe.idMeal)}>
+                    {isFave ? 'unfave' : 'fave'}
+                </button>
+
             </div>
+            </AppProviders>
     )
 }
 

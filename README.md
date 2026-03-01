@@ -75,11 +75,14 @@ Anyone in the list below has full access to this code and can fork or clone it b
 
 ## 🧘 Reflections
 1. What was the most challenging part of the project for you?
+    > Favorites, by far. I kept getting undefined data when I used the custom localStorage hook, so I had to keep adding more and more safeguards like try catch and "if null", "!variable ?". Then I had to make sure every single one of my variables matched because I was using "faves" for my favorite state/array and not "fave", singular. 
+    > I used catch {e} instead of catch (e) and almost died of exhaustion trying to figure it out.
     > json stringify vs direct data when switching to custom fetch hook
     > wasted time to write/understand/edit fetch for meals using state within category page vs. just using fetch hook
     > learned to use loading as control instead of tenery based on if data exists
-    > use useFetchData's return data explicitly - can't rename/use variables to handle it
+    > use useFetchData's return data explicitly - can't rename/use variables/state to handle it
     > installing tailwind fully
+
 1. Give a brief explanation of a design decision you made (e.g. why you structured a hook a certain way, how you decided to manage a piece of state).
     >
     >
