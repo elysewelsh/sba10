@@ -1,33 +1,30 @@
-
-import { Link, useParams } from "react-router-dom"
-import  useFetchData  from '../hooks/useFetch'
-
+import { Link } from "react-router-dom"
+import { useContext} from 'react'
+import { FavoritesContext } from "../AppProviders"
 
 function FavoritesPage() {
  
-    const {idMeals} = useParams()
-
-    let url = 'https://www.themealdb.com/api/json/v1/1/filter.php?c='+strCategory
-
-    const { data, loading, error } = useFetchData(url);
+    const {fave} = useContext(FavoritesContext) || {fave:[]};
 
     return (
         <div>
-            Category Page
-            {loading ? <>loading...</>:
-            <ul>
-            {data.meals.map(meal => 
-                    <Link key={meal.idMeal} to={"/category/"+ strCategory +"/meal/" + meal.idMeal}>
-                        <li>{meal.strMeal}</li>
-                    </Link>
-                )}
-            </ul>
+            <h2>Favorites</h2>
+            {
+                fave.length === 0 ? <p>No faves</p> :
+                <div>
+                <ul>
+                {fave.map(meal => (
+                    <li key={meal}>
+                        <Link to={"/meal/" + meal}>
+                            {meal}
+                        </Link>
+                    </li>
+                ))}
+                </ul>
+                </div>
             }
-
-
         </div>
-
     )
 }
 
-export default CategoryPage
+export default FavoritesPage;

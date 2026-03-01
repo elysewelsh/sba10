@@ -6,6 +6,7 @@ import CategoryPage from './pages/CategoryPage'
 import RecipeDetailPage from './pages/RecipeDetailPage'
 import { NavBar } from './components/Navbar'
 import SearchResultsPage from './pages/SearchResultsPage'
+import FavoritesPage from './pages/FavoritesPage'
 import AppProviders from './AppProviders'
 
 function App() {
@@ -15,12 +16,7 @@ function App() {
     <AppProviders>
     <>
     <NavBar/>
-      <nav>
-        <ul>
-          <li className="font-white"><Link to="/">Home</Link></li>
-          {/* <li><Link to="/category">Category</Link></li> */}
-        </ul>
-      </nav>
+
       
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -28,6 +24,7 @@ function App() {
         <Route path="category/:strCategory/meal/:idMeal" element={<RecipeDetailPage />} /> 
         <Route path="meal/:idMeal" element={<RecipeDetailPage/>}/>
         <Route path="search/:searchInput" element={<SearchResultsPage />} />
+        <Route path="favorites" element={<FavoritesPage/>}/>
         <Route path="*" element={<>Not found</>} />
       </Routes>
       

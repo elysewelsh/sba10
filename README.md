@@ -61,7 +61,15 @@ npm run dev
 
 ## 📖 References
 
-* **Project References:** https://github.com/JadeTwo/2025-RTT-74/tree/main/mod-10, https://reactrouter.com/6.30.3/start/tutorial, https://dev.to/yuya0114/how-to-display-line-breaks-in-react-for-the-n-newline-character-3b0h, https://tailwindcss.com/docs/white-space, https://www.w3tutorials.net/blog/multiple-path-names-for-a-same-component-in-react-router/, https://bobbyhadz.com/blog/react-button-link, Other references and code citations within components
+* **Project References:** 
+    - https://github.com/JadeTwo/2025-RTT-74/tree/main/mod-10
+    - https://reactrouter.com/6.30.3/start/tutorial
+    - https://dev.to/yuya0114/how-to-display-line-breaks-in-react-for-the-n-newline-character-3b0h
+    - https://tailwindcss.com/docs/white-space
+    - https://www.w3tutorials.net/blog/multiple-path-names-for-a-same-component-in-react-router/
+    - https://bobbyhadz.com/blog/react-button-link
+    - https://tailwindcss.com/docs/animation
+    - Other references and code citations within components
 * **To Format README:** These templates gave me formatting advice and inspiration:
      - [Scrimba README template](https://github.com/elysewelsh/lab2.1/blob/main/README.md)
      - [Frontend Mentor README template](https://github.com/elysewelsh/sba3/blob/main/README-template.md)
@@ -83,6 +91,7 @@ Anyone in the list below has full access to this code and can fork or clone it b
     > use useFetchData's return data explicitly - can't rename/use variables/state to handle it
     > installing tailwind fully
     > Figuring out I needed to add a new route path to the same page (RecipeDetails from Search)
+    > Failed to add setTimeout on fetch in order to see/test spinner. It made the delay so bad (even at 500ms) that data was set to null and the pages wouldn't display.
 
 1. Give a brief explanation of a design decision you made (e.g. why you structured a hook a certain way, how you decided to manage a piece of state).
     >

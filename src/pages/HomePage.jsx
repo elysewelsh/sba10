@@ -1,34 +1,27 @@
-import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
+import { Spinner } from "../components/Spinner"
+import { ErrorMessage} from "../components/ErrorMessage"
+import useFetchData from "../hooks/useFetch"
 
-// import { products } from "../data"
+
 
 function HomePage() {
 
-    const [categories, setCategories] = useState([])
+    let url = 'https://www.themealdb.com/api/json/v1/1/categories.php'
 
-    useEffect(() => {
-
-        const getCategories = async () => {
-            const response = await fetch('https://www.themealdb.com/api/json/v1/1/categories.php')
-            const data = await response.json()
-            setCategories(data.categories)
-        }
-
-        getCategories()
-
-    }, [])
-
+    const { data, loading, error } = useFetchData(url);
 
     return (
         <div>
+            {loading ? <Spinner/> : error ? <ErrorMessage/> :
             <ul>
-                {categories.map(category => 
+                {data.categories.map(category => 
                     <Link key={category.idCategory} to={"/category/" + category.strCategory}>
                         <li>{category.strCategory}</li>
                     </Link>
                 )}
             </ul>
+            }
         </div>
 
 

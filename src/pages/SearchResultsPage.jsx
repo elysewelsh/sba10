@@ -1,5 +1,6 @@
 import { Link, useParams } from "react-router-dom"
 import  useFetchData  from '../hooks/useFetch'
+import { Spinner } from "../components/Spinner"
 
 function SearchResultsPage() {
  
@@ -12,7 +13,7 @@ function SearchResultsPage() {
     return (
         <div>
             {
-                loading ? <>loading...</>: (!data.meals) ? <p>"No recipes found for {searchInput}"</p> :
+                loading ? <Spinner/> : (!data.meals) ? <p>"No recipes found for {searchInput}"</p> :
                 <div>
                 <h2> Search Results for {searchInput}</h2>
                 <ul>

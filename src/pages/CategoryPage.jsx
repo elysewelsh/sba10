@@ -1,5 +1,6 @@
 import { Link, useParams } from "react-router-dom"
 import  useFetchData  from '../hooks/useFetch'
+import { Spinner } from "../components/Spinner"
 
 
 function CategoryPage() {
@@ -13,7 +14,7 @@ function CategoryPage() {
     return (
         <div>
             Category Page
-            {loading ? <>loading...</>:
+            {loading ? <Spinner/>: error ? <ErrorMessage/> :
             <ul>
             {data.meals.map(meal => 
                     <Link key={meal.idMeal} to={"/category/"+ strCategory +"/meal/" + meal.idMeal}>

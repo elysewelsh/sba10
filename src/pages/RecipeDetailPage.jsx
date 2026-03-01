@@ -1,6 +1,8 @@
 import { useParams } from "react-router-dom"
 import RecipeCard from "../components/RecipeCard"
 import useFetchData from "../hooks/useFetch"
+import { Spinner} from "../components/Spinner"
+import { ErrorMessage } from "../components/ErrorMessage"
 
 
 function RecipeDetailPage() {
@@ -14,7 +16,7 @@ function RecipeDetailPage() {
 
     return (
         <div>
-        {loading ? <>loading...</>:
+        {loading ? <Spinner/>: error ? <ErrorMessage/> :
         !data.meals[0].strMeal ? <></> :
         <RecipeCard recipe={data.meals[0]} />
         }
