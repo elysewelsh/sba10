@@ -30,30 +30,30 @@ function RecipeCard ({recipe}) {
         <AppProviders>
             <div className="text-center">
                 <h2 className="font-bold">{recipe.strMeal}</h2>
-                <h3 className="font-bold mt-10">Ingredients</h3>
-                <div className="flex flex-row gap-3 mt-3">
-                    <div>
-                        <h4 className="mb-2 font-bold">Measurement</h4>
-                        <ul>
-                        {measurements}
-                        </ul>
+                <div className="flex flex-col">
+                    <h3 className="font-bold mt-10">Ingredients</h3>
+                    <div className="flex flex-row gap-3 mt-3">
+                        <div>
+                            <h4 className="mb-2 font-bold">Measurement</h4>
+                            <ul>
+                            {measurements}
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 className="mb-2 font-bold">Ingredient</h4>
+                            <ul>
+                            {ingredients}
+                            </ul>
+                        </div>
                     </div>
-                    <div>
-                        <h4 className="mb-2 font-bold">Ingredient</h4>
-                        <ul>
-                        {ingredients}
-                        </ul>
-                    </div>
-
                 </div>
                 <div>
                     <h3 className="font-bold">Instructions</h3>
                     <div className="whitespace-pre-wrap">{instructions}</div>
                 </div>
-                <button onClick ={() => toggleFave(recipe.idMeal)}>
+                <button className="m-5" onClick ={() => toggleFave(recipe.idMeal)}>
                     {isFave ? 'unfave' : 'fave'}
                 </button>
-
             </div>
             </AppProviders>
     )
